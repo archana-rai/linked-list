@@ -97,8 +97,16 @@ class LinkedList {
       this.size--;
     }
   }
+
+  clearNextRef(xNode) {
+    if (xNode && xNode.next) {
+      return this.clearNextRef(xNode.next);
+    }
+  }
+
   //Clear List
   clearList() {
+    this.clearNextRef(this.head);
     this.head = null;
   }
 
