@@ -100,7 +100,8 @@ class LinkedList {
 
   clearNextRef(xNode) {
     if (xNode && xNode.next) {
-      return this.clearNextRef(xNode.next);
+      this.clearNextRef(xNode.next);
+      xNode.next = null;
     }
   }
 
